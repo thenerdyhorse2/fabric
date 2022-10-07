@@ -17,7 +17,7 @@ RUN apk add --no-cache \
 ADD . $GOPATH/src/github.com/hyperledger/fabric
 WORKDIR $GOPATH/src/github.com/hyperledger/fabric
 
-FROM golang as tools
+FROM golang:1 as tools
 ARG GO_TAGS
 RUN make tools GO_TAGS=${GO_TAGS}
 
